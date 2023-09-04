@@ -6,6 +6,7 @@ namespace ACT00_REVISION
     {
         static void Main(string[] args)
         {
+            MethodesDuProjet MesOutils = new MethodesDuProjet();
             // déclaration des variables.... COMPLETER AVEC CE QUI MANQUE
 
             string rep;
@@ -22,30 +23,30 @@ namespace ACT00_REVISION
             do
             {
                 //lecture des 3 côtés
-                // ...
-                // ...
-                // ...
+                c1 = lireDouble(1);
+                c2 = lireDouble(2);
+                c3 = lireDouble(3);
 
                 // ordonner les côtés => APPEL ORDONNECOTES
-                // ...
+                MesOutils.OrdonneCotes(ref c1, ref c2, ref c3);
                 // série de test (voir consignes)
-                if (// on a un triangle...)
+                if (MesOutils.Triangle(c1, c2, c3))
                 {
                     // préparation et affichage du résultat du test 'triangle' avec la procédure 'Affiche'
-                    // ...
+                    MesOutils.Triangle(c1, c2, c3)
                     // ...
 
                     // vérification équilatéral
-                    if (// on a un triangle équilatéral...)
+                    if (MesOutils.Equi(c1, c2, c3))
                     {
                         // préparation et affichage du résultat du test 'equilateral' avec la procédure 'Affiche'
-                        // ...
+                        MesOutils.Affiche(true, "equilateral");
                         // ...
                     }
                     else
                     {
-                        // vérification triangle rectangle
-                        if (// on a un triangle équilatéral...)
+                        MesOutils.Affiche(false, "equilateral");
+                        if ((MesOutils.TriangleRectangle(c1, c2, c3))
                         {
                             // préparation et affichage du résultat positif du test 'rectangle' avec la procédure 'Affiche'
                             // ...
@@ -54,19 +55,19 @@ namespace ACT00_REVISION
                         else
                         {
                             // préparation et affichage du résultat négatif du test 'rectangle' avec la procédure 'Affiche'
-                            // ...
+                            MesOutils.Affiche(true, "isocele");
                             // ...
                         }
                         // vérification du cas isocèle et affichage dans le cas positif
                         //...
-                        //...
+                        MesOutils.Affiche(false, "isocele");
                         //... A vous de voir en combien de lignes...
                     }
                 }
                 else // si ce n'est pas un triangle
                 {
                     // préparation et affichage du résultat négataif du test 'triangle' avec la procédure 'Affiche'
-                    // ...
+                    MesOutils.Affiche(false, "triangle");
                     // ...
                 }
                 // reprise ?
